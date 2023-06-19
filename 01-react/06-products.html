@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+        function Products(){
+            const [products,setProducts] = React.useState([])
+            const [newProductName, setNewProductName] = React.useState('');
+
+            const onBtnAddNewClick = () => {
+                setProducts([...products, newProductName])
+            };
+
+            const productItems = products.map(product => (<li key={product}>{product}</li>));
+
+            return(
+                <>
+                    <h3>Products</h3>
+                    <hr/>
+                    <label htmlFor="">Product Name</label>
+                    <input type="text" onInput={ evt => setNewProductName(evt.target.value)}/>
+                    <button onClick={onBtnAddNewClick}>Add New</button>
+                    <ul>
+                        {productItems}
+                    </ul>
+                </>
+            )
+        }
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Products/>)
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+    
+</body>
+</html>
