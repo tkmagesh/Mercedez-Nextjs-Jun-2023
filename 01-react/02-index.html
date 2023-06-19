@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script>
+        (function(){
+            var root;
+            var clickCount = 0
+            function onBtnRenderClick(){
+
+                //++clickCount;
+                //document.getElementById('spanCount').innerText = clickCount;
+                var h1title = 'React.js - ' + clickCount;
+                
+                var app = React.createElement('div', null, 
+                    React.createElement('h1', null, h1title),
+                    React.createElement('div', null, 
+                        React.createElement('span', null, 'Click Count :'),
+                        React.createElement('span', null, clickCount)
+                    ),
+                    React.createElement('hr'),
+                    React.createElement('div', null, 
+                        React.createElement('h3', null, 'Introduction'),
+                        React.createElement('p', null, 'Deserunt sint dolore pariatur nostrud amet deserunt fugiat enim nulla velit officia pariatur mollit aliquip. Ipsum incididunt in sit amet laboris commodo incididunt voluptate exercitation. Consequat culpa et pariatur amet id aliquip et cupidatat nulla ad esse. Minim fugiat occaecat pariatur excepteur commodo. Officia irure ut amet quis eiusmod. Laborum ullamco quis reprehenderit in nostrud in enim aute commodo velit cupidatat commodo non. Ex irure sunt laboris id id magna.   '),
+                        React.createElement('p', null, 'Velit anim magna cupidatat eu minim et eu commodo deserunt incididunt. Cillum consectetur est commodo ullamco elit ex do do sint deserunt cupidatat et. Sint esse deserunt elit nostrud proident. Duis dolore aute id et fugiat esse ut eiusmod adipisicing. Exercitation anim ea esse cupidatat excepteur velit. Deserunt quis tempor mollit officia est incididunt non id do cillum consequat in ex.'),
+                    ),
+                    React.createElement('div', null,
+                        React.createElement('h3', null, 'Advantages'),
+                        React.createElement('ul', null, 
+                            React.createElement('li', null, 'Declarative'),
+                            React.createElement('li', null, 'Performance'),
+                        ),
+                    )
+                )
+                root.render(app);
+            }
+            function onDocumentLoad(){
+                var btnRender = document.getElementById('btnRender');
+                btnRender.addEventListener('click', onBtnRenderClick)
+
+                root = ReactDOM.createRoot(document.getElementById('root'))
+            }
+            window.addEventListener('load', onDocumentLoad)
+        })()
+    </script>
+</head>
+<body>
+    <!-- 
+        <div>
+        <span>Click Count :</span>
+        <span id="spanCount">0</span>
+    </div> 
+-->
+    <button id="btnRender">Render</button>
+    <div id="root"></div>
+</body>
+</html>
