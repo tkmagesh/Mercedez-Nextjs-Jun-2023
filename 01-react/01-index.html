@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script>
+        (function(){
+            var root;
+            var clickCount = 0
+            function onBtnRenderClick(){
+
+                ++clickCount;
+                document.getElementById('spanCount').innerText = clickCount;
+                
+                var h1 = React.createElement('h1', { id: 'heading-1' }, 'Welcome to React! - ' + clickCount)
+                root.render(h1);
+            }
+            function onDocumentLoad(){
+                var btnRender = document.getElementById('btnRender');
+                btnRender.addEventListener('click', onBtnRenderClick)
+
+                root = ReactDOM.createRoot(document.getElementById('root'))
+            }
+            window.addEventListener('load', onDocumentLoad)
+        })()
+    </script>
+</head>
+<body>
+    <div>
+        <span>Click Count :</span>
+        <span id="spanCount">0</span>
+    </div>
+    <button id="btnRender">Render</button>
+    <div id="root"></div>
+</body>
+</html>

@@ -8,14 +8,22 @@
     Wind up     : 5:00 PM
 
 ## Methodology: ##
-    - No powerpoints
-    - Talk & Code
-    - Anytime Q & A
+- No powerpoints
+- Talk & Code
+- Anytime Q & A
 
 ## Software Requirements: ##
-    - Node.js
-    - Chrome Browser
-    - Any Editor (Visual Studio Code)
+- Node.js
+- Chrome Browser
+- Any Editor (Visual Studio Code)
+
+## Repository ##
+https://github.com/tkmagesh/Mercedez-Nextjs-Jun-2023
+
+
+## Books ##
+- Patterns of Enterprise Application Architecture (Martin Fowler)
+
 
 
 
