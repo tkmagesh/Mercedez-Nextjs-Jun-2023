@@ -24,6 +24,15 @@ https://github.com/tkmagesh/Mercedez-Nextjs-Jun-2023
 ## Books ##
 - Patterns of Enterprise Application Architecture (Martin Fowler)
 
+## HTML vs JSX ##
+### HTML ###
+- Can have tags that are not closed
+- can use 'class' attribute
+- Can use 'for' attribute
 
+### JSX ###
+- Every tag must have the corresponding 'close' tag
+- Use 'className' in place of 'class'
+- Use 'htmlFor' in place of 'for'
 
 

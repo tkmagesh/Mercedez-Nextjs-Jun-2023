@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <style>
+        .message{
+            color : blue;
+        }
+    </style>
+    <script type="text/babel">
+        // Component
+       function Greeter(){
+
+        let [greetMsg, setGreetMsg] = React.useState('[default greet message]')
+        let [userName, setUserName] = React.useState('');
+
+        const onBtnGreetClick = () => {
+            setGreetMsg('Hi ' + userName + ', Have a nice day!');
+        }
+
+        const onTxtUserNameInput = (evt) => {
+            setUserName(evt.target.value)
+        }
+
+        //presentation
+        return (
+            <div>
+                <h3>Greeter</h3>
+                <label htmlFor="">User Name :</label>
+                <input type="text" onInput={onTxtUserNameInput}/>
+                <button onClick={onBtnGreetClick}>Greet</button>
+                <div className="message">{greetMsg}</div>
+            </div>
+        );
+       }
+
+       const root = ReactDOM.createRoot(document.getElementById('root'));
+       root.render(<Greeter/>)
+        
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
