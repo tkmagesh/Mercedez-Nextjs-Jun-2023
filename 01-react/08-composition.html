@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+        function Calculator(){
+            // State
+            const [n1, setN1] = React.useState(0)
+            const [n2, setN2] = React.useState(0)
+            const [result, setResult] = React.useState(0);
+
+            //UI Behavior
+            const onAddClick = () => {
+                setResult(n1 + n2);
+            }
+            const onSubtractClick = () => {
+                setResult(n1 - n2);
+            }
+            const onMultiplyClick = () => {
+                setResult(n1 * n2);
+            }
+            const onDivideClick = () => {
+                setResult(n1 / n2);
+            }
+
+            // Presentation
+            return (
+                <div>
+                    <h3>Calculator</h3>
+                    <input type="number" onInput={ evt => setN1(evt.target.valueAsNumber)} />
+                    <input type="number" onInput={ evt => setN2(evt.target.valueAsNumber)} />
+                    <br/>
+                    <button onClick={onAddClick}>Add</button>
+                    <button onClick={onSubtractClick}>Subtract</button>
+                    <button onClick={onMultiplyClick}>Multiply</button>
+                    <button onClick={onDivideClick}>Divide</button>
+                    <CalculatorResult data={result}/>
+                </div>
+            )
+        }
+
+        function CalculatorResult(props){
+            return (<div>{props.data}</div>)
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+        root.render(<Calculator/>)
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
