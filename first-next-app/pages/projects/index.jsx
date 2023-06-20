@@ -1,6 +1,7 @@
 import Link  from "next/link";
 import { useRouter } from "next/router";
 import axios  from "axios";
+import styles from './index.module.css'
 
 export default function ProjectsPage(props){
     const router = useRouter()
@@ -15,21 +16,14 @@ export default function ProjectsPage(props){
     }
     return (
         <>
-            <h3>Projects [refactored]</h3>
+            <h3>Projects</h3>
             <hr/>
-            <ul>
+            <ul className={styles.list}>
                 { projects.map(project => (
-                    <li key={project.id}>
-                        {/* 
-                        <Link href={{
-                                pathname : '/projects/[projectId]',
-                                query : {
-                                    projectId : project.id
-                                }
-                            }}
-                        >{project.name}</Link> 
-                        */}
-                        <button onClick={() => onBtnProjectClick(project.id)}>Project - {project.id}</button>
+                    <li className={styles.listItem} key={project.id}>
+                        <span className={styles.projectName}>{project.name}</span>
+                        <div className={styles.projectDesc}>{project.desc}</div>
+                        <button onClick={() => onBtnProjectClick(project.id)}>Show Bugs</button>
                     </li>)
                   )
                 }

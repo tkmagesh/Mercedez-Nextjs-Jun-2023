@@ -1,0 +1,22 @@
+.list {
+    width : 500px;
+    list-style: none;
+    -webkit-padding-start: 0;
+}
+
+.listItem{
+    margin-bottom: 10px;
+    border : 1px solid gray;
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding : 10px
+}
+
+.projectName{
+    font-size: 18pt;
+}
+
+.projectDesc {
+    font-style: italic;
+}
