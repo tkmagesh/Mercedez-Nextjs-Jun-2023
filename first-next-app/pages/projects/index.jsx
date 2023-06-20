@@ -3,7 +3,16 @@ import { useRouter } from "next/router";
 import axios  from "axios";
 
 export default function ProjectsPage(props){
+    const router = useRouter()
     const projects = props.list;
+    const onBtnProjectClick = (projectId) => {
+        router.push({
+            pathname : '/projects/[projectId]',
+            query : {
+                projectId : projectId
+            }
+        })
+    }
     return (
         <>
             <h3>Projects [refactored]</h3>
@@ -11,13 +20,16 @@ export default function ProjectsPage(props){
             <ul>
                 { projects.map(project => (
                     <li key={project.id}>
+                        {/* 
                         <Link href={{
                                 pathname : '/projects/[projectId]',
                                 query : {
                                     projectId : project.id
                                 }
                             }}
-                        >{project.name}</Link>
+                        >{project.name}</Link> 
+                        */}
+                        <button onClick={() => onBtnProjectClick(project.id)}>Project - {project.id}</button>
                     </li>)
                   )
                 }
@@ -32,7 +44,7 @@ async function getProjectsFromServer(){
     return response.data
 }
 
-/* 
+
 
 // To implement - SSR
 export async function getServerSideProps(){
@@ -43,10 +55,10 @@ export async function getServerSideProps(){
         }
     }
 } 
-*/
+
 
 // To implement - SSG (page rendered during application build)
-export async function getStaticProps(){
+/* export async function getStaticProps(){
     const projects = await getProjectsFromServer()
     return {
         props : {
@@ -54,4 +66,4 @@ export async function getStaticProps(){
         },
         revalidate : 10
     }
-} 
+}  */

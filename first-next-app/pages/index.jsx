@@ -2,7 +2,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import { useRouter } from 'next/router'
 
 //SSR
 
@@ -19,7 +19,17 @@ export default function Home() {
 }
 */
 export default function Home() {
- 
+  const router = useRouter()
+  const onBtnProjectsClick = () => {
+    router.push({
+      pathname : '/projects'
+    })
+  }
+  const onBtnCustomersClick = () => {
+    router.push({
+      pathname : '/customers'
+    })
+  }
   return (
     <>
       <Head>
@@ -30,7 +40,12 @@ export default function Home() {
       </Head>
       <h1>My Next App</h1>
       {/* <a href="/projects">Projects</a> */}
-      <Link href="/projects">Projects</Link>
+     {/*  
+     <Link href="/projects" prefetch={false} >Projects</Link>
+      <Link href="/customers" prefetch={false} >Customers</Link> 
+      */}
+      <button onClick={onBtnProjectsClick}>Projects</button>
+      <button onClick={onBtnCustomersClick}>Customers</button>
     </>
   ) 
 
