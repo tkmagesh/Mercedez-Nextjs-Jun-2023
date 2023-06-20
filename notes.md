@@ -35,4 +35,5 @@ https://github.com/tkmagesh/Mercedez-Nextjs-Jun-2023
 - Use 'className' in place of 'class'
 - Use 'htmlFor' in place of 'for'
 
-
+## Next.js App ##
+- npx create-next-app@latest
