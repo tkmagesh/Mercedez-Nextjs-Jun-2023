@@ -37,3 +37,8 @@ https://github.com/tkmagesh/Mercedez-Nextjs-Jun-2023
 
 ## Next.js App ##
 - npx create-next-app@latest
+
+## New App Router Migration ##
+https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration#migrating-_documentjs-and-_appjs
+
+

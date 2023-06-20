@@ -1,10 +1,13 @@
+import { useRouter } from "next/router";
 
 export default function ProjectInfoPage(){
+    const router = useRouter()
+    const { projectId } = router.query
     return (
         <>
-            <h3>Project - [some project]</h3>
+            <h3>Project - [{projectId}]</h3>
             <hr/>
-            <div>Information about [some project] will be displayed here...</div>
+            <div>Information about [{projectId}] will be displayed here...</div>
         </>
     )
 }

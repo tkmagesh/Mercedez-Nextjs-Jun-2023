@@ -10,5 +10,5 @@ export default function ClientOrServer(){
         setSide('client')
         }, 4000);
     }, []) 
-    return <div>You're currently on the {side}-side.</div>;
+    return (<div>You&apos;re currently on the {side}-side.</div>);
 }
