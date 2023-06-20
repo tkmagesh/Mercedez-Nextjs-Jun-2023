@@ -42,3 +42,9 @@ https://github.com/tkmagesh/Mercedez-Nextjs-Jun-2023
 https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration#migrating-_documentjs-and-_appjs
 
 
+## To start the data server ##
+- open a new terminal
+- change directory to the folder that has the db.json file (data-server)
+- run the following command
+    - npx json-server db.json -p 3030
+
